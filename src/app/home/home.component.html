@@ -1,7 +1,7 @@
 <app-header />
-<section class="container-img">
+<section class="pb-10 container-img">
   @for (item of imageArray; track item.id) {
-  <div class="box">
+  <div class="box" (click)="openDialog(item)">
     <img [src]="item.img" alt="" />
   </div>
   }

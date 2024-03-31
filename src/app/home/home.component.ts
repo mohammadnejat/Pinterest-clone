@@ -1,15 +1,28 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { HeaderComponent } from '../shared/components/header/header.component';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { DialogImageComponent } from '../shared/components/dialog-image/dialog-image.component';
 
+export interface ImageModel {
+  id: number;
+  img: string;
+}
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, DialogImageComponent],
   providers: [],
   changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
+  public openDialogService = inject(MatDialog);
+
   imageArray = [
     { id: 1, img: 'assets/images/1.jpg', width: '1939px', height: '1374px' },
     { id: 2, img: 'assets/images/2.jpg', width: '5184px', height: '3456px' },
@@ -68,4 +81,12 @@ export class HomeComponent {
       height: '4000px',
     },
   ];
+
+  openDialog(item: ImageModel) {
+    this.openDialogService.open(DialogImageComponent, {
+      data: {
+        img: item.img,
+      },
+    });
+  }
 }
