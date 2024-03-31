@@ -1,0 +1,8 @@
+<app-header />
+<section class="container-img">
+  @for (item of imageArray; track item.id) {
+  <div class="box">
+    <img [src]="item.img" alt="" />
+  </div>
+  }
+</section>

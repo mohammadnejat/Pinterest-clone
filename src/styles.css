@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container-img {
+  width: 1400px;
+  margin: 20px auto;
+  columns: 4;
+  column-gap: 20px;
+}
+
+.container-img .box {
+  width: 100%;
+  margin-bottom: 10px;
+  break-inside: avoid;
+}
+
+.container-img .box img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+@media (max-width: 1200px) {
+  .container-img {
+    width: calc(100% - 40px);
+    columns: 3;
+  }
+}
+@media (max-width: 768px) {
+  .container-img {
+    columns: 3;
+  }
+}
+@media (max-width: 480px) {
+  .container-img {
+    columns: 2;
+  }
+}
