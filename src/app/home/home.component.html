@@ -1,8 +1,10 @@
 <app-header />
 <section class="pb-10 container-img">
-  @for (item of imageArray; track item.id) {
+  @for (item of imageArray; track item.id) { @defer (on viewport) {
   <div class="box" (click)="openDialog(item)">
     <img [src]="item.img" alt="" />
   </div>
-  }
+  }@placeholder {
+  <div class="h-96">Loading...</div>
+  } }
 </section>
