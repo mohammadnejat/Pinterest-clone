@@ -1,0 +1,24 @@
+.about-body {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+  width: 100%;
+}
+
+.insta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.telephon {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 18px;
+}
